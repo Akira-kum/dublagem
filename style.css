@@ -1,0 +1,209 @@
+p{
+  color: #ffffff;
+  position: relative;
+  display: inline-block;
+  font-family: Arial, Helvetica, sans-serif;
+}
+body {
+    margin: 0;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-color: #383838;
+  }
+  header {
+  background-color: #242323;
+    color: rgb(255, 255, 255);
+    padding: 1rem;
+    text-align: center;
+  }
+
+  nav {
+    margin-top: 10px;
+  }
+  
+  nav a {
+    color: rgb(255, 255, 255);
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+  }
+   .container {
+    margin: 2rem 15%;
+    background: white;
+    padding: 2rem;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    animation: fadeIn 1s ease;
+  }
+  footer {
+    background-color: #707070;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+  }
+  img, video {
+    max-width: 100%;
+    margin:0rem 0;
+    display: block;
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  .home-fundo1 {
+    position: relative;
+    overflow: hidden;
+    height: 90vh; /* 90% da altura da tela */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+  }
+  
+
+.home-fundo1::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 90%;
+  background-image: url(Gemini_Generated_Image_xv8x0bxv8x0bxv8x.png);
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
+  animation: zoom 10s infinite alternate ease-in-out;
+}
+
+.home-fundo1::after {
+  content: "";
+  position: absolute;
+  top: 0; 
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+
+.conteudo-home1 {
+  position: relative;
+  z-index: 3;
+  padding: 2rem;
+}
+
+@keyframes zoom {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.1); }
+}
+
+
+
+  nav a.ativo {
+  border-bottom: 2px solid #ffffff; /* linha branca embaixo */
+  padding-bottom: 2px;
+  color: #f169e6; /* opcional: cor dourada para destaque */
+  transition: all 0.3s ease; /* Suaviza o efeito */
+}
+  
+/* EFEITO ao passar o mouse no link ativo */
+nav a.ativo:hover {
+  color: #ff00dd; /* Muda para laranja forte */
+  border-bottom: 2px solid  #ff00dd; /* Linha também muda para laranja */
+  transform: scale(1.1); /* Dá um leve "zoom" no texto */
+}
+
+
+.hover-underline {
+  font-size: 3rem;
+  color: #ffffff;
+  position: relative;
+  display: inline-block;
+}
+
+.hover-underline::after,
+.hover-underline::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(to right, #126680, #00ffff);
+  bottom: -5px;
+  left: 0;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.4s ease-out;
+}
+
+.hover-underline::before {
+  top: -5px;
+  transform-origin: left;
+}
+
+.hover-underline:hover::after,
+.hover-underline:hover::before {
+  transform: scaleX(1);
+}
+
+
+
+
+
+
+
+
+.hover-container {
+    display: inline-block;
+    position: relative;
+}
+
+.explosive-text {
+    font-size: 3rem;
+    color: #fff;
+    letter-spacing: 0.1em;
+    display: inline-block;
+    position: relative;
+    transition: transform 0.3s ease-out;
+}
+
+.explosive-text:hover {
+    transform: scale(1.1);
+}
+
+.explosive-text:hover::before,
+.explosive-text:hover::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200%;
+    height: 200%;
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    animation: burst 0.8s ease-out forwards;
+}
+
+.explosive-text:hover::before {
+    background: radial-gradient(circle, rgba(255, 0, 150, 0.6), transparent);
+    z-index: -1;
+}
+
+.explosive-text:hover::after {
+    background: radial-gradient(circle, rgba(0, 200, 255, 0.6), transparent);
+    z-index: -2;
+}
+
+@keyframes burst {
+    0% {
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 1;
+    }
+    70% {
+        opacity: 0.8;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1.5);
+        opacity: 0;
+    }
+}
